@@ -1,0 +1,8 @@
+services:
+  api:
+    # image: bogie-api:latest
+    build: ./Bogie-Api
+    volumes:
+      - ./Bogie-Api:/var/www/html:cached
+    ports:
+      - "8000:8000"
