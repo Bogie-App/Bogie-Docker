@@ -6,3 +6,23 @@ services:
       - ./Bogie-Api:/var/www/html:cached
     ports:
       - "8000:8000"
+  database:
+    build: ./Bogie-Database
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+  etl:
+    build: ./Bogie-ETL
+    env_file:
+      - .env
+    depends_on:
+      database:
+        condition: service_started
+    volumes:
+      - ./Bogie-ETL:/app:cached
+volumes:
+  db_data:
+      

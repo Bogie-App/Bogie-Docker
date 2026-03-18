@@ -1,1 +1,4 @@
 Bogie-Api/
+Bogie-Database/
+Bogie-ETL/
+.env
