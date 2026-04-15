@@ -17,6 +17,7 @@ done
 git -C Bogie-Api checkout dev || true
 git -C Bogie-Database checkout dev || true
 git -C Bogie-ETL checkout dev || true
+git -C Bogie-JupyterNotebook checkout dev || true
 
 # build local images
 docker build -t api:dev ./Bogie-Api
